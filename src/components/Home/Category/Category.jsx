@@ -6,7 +6,7 @@ const Category = ({ categories }) => {
     return (
         <div className="shop-by-category">
             <div className="categories">
-                {categories?.data?.map((item) => (
+                {categories?.map((item) => (
                     <div
                         key={item.id}
                         className="category"
@@ -14,8 +14,8 @@ const Category = ({ categories }) => {
                     >
                         <img
                             src={
-                                process.env.REACT_APP_STRIPE_APP_DEV_URL +
-                                item.attributes.img.data.attributes.url
+                               `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
+                                item?.attributes?.img?.data?.attributes?.url
                             }
                         />
                     </div>

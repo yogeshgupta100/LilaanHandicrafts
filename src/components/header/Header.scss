@@ -4,8 +4,8 @@
     width: 100%;
     padding: 0 20px;
     z-index: 99;
-    background-color: #212121;
-    color: white;
+    background-color: #fbf6f6;
+    // color: white;
     border-bottom: 1px solid;
     border-color: rgba(0, 0, 0, 0.1);
     @include md {
@@ -72,7 +72,7 @@
             span {
                 min-width: 20px;
                 text-align: center;
-                background: #8e2de2;
+                background: #eb973d;
                 padding: 2.5px;
                 position: absolute;
                 top: -5px;
@@ -84,8 +84,8 @@
         }
     }
     &.sticky-header {
-        background-color: #212121;
-        color: white;
+        background-color: #fbf6f6;
+        // color: white;
         position: sticky;
         top: 0;
         transform: translateY(-60px);

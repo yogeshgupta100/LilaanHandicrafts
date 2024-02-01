@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
@@ -7,8 +7,10 @@ import "./Header.scss";
 import Search from "./Search/Search";
 import { Context } from "../../utils/context";
 import Cart from "../Cart/Cart";
+import Contact from "./Contact";
 
 const Header = () => {
+    const { cartCount, showCart, setShowCart } = useContext(Context);
     const [scrolled, setScrolled] = useState(false);
     const [searchModal, setSearchModal] = useState(false);
     const navigate = useNavigate();
@@ -25,7 +27,6 @@ const Header = () => {
         window.addEventListener("scroll", handleScroll);
     }, []);
 
-    const { cartCount, showCart, setShowCart } = useContext(Context);
 
     return (
         <>
@@ -39,11 +40,12 @@ const Header = () => {
                         <li>Categories</li>
                     </ul>
                     <div className="center" onClick={() => navigate("/")}>
-                        JSDEVSTORE.
+                        LilaanHandicraft
                     </div>
                     <div className="right">
                         <TbSearch onClick={() => setSearchModal(true)} />
-                        <AiOutlineHeart />
+                        {/* <AiOutlineHeart /> */}
+                        <Contact/>
                         <span
                             className="cart-icon"
                             onClick={() => setShowCart(true)}

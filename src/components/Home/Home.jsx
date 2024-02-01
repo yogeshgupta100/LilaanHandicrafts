@@ -3,7 +3,6 @@ import "./Home.scss";
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
 import Products from "../Products/Products";
-import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
 
 const Home = () => {
@@ -14,16 +13,17 @@ const Home = () => {
         getCategories();
     }, []);
 
-    const getProducts = () => {
-        fetchDataFromApi("/api/products?populate=*").then((res) => {
-            setProducts(res);
+
+    const getProducts = (async() => {
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/products?populate=*`);
+			const data = await res.json();
+			setProducts(data.data);
         });
-    };
-    const getCategories = () => {
-        fetchDataFromApi("/api/categories?populate=*").then((res) => {
-            setCategories(res);
+    const getCategories = (async() => {
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/categories?populate=*`);
+			const data = await res.json();
+			setCategories(data.data);
         });
-    };
 
     return (
         <div>

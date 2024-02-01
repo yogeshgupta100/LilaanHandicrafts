@@ -3,31 +3,32 @@ import { MdClose } from "react-icons/md";
 import { BsCartX } from "react-icons/bs";
 import { Context } from "../../utils/context";
 import CartItem from "./CartItem/CartItem";
-import { loadStripe } from "@stripe/stripe-js";
-import { makePaymentRequest } from "../../utils/api";
+// import { loadStripe } from "@stripe/stripe-js";
+// import { makePaymentRequest } from "../../utils/api";
+import {ReactWhatsapp} from "react-whatsapp"
 
 import "./Cart.scss";
 
 const Cart = () => {
     const { cartItems, setShowCart, cartSubTotal } = useContext(Context);
 
-    const stripePromise = loadStripe(
-        process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
-    );
+    // const stripePromise = loadStripe(
+    //     import.meta.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
+    // );
 
-    const handlePayment = async () => {
-        try {
-            const stripe = await stripePromise;
-            const res = await makePaymentRequest.post("/api/orders", {
-                products: cartItems,
-            });
-            await stripe.redirectToCheckout({
-                sessionId: res.data.stripeSession.id,
-            });
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    // const handlePayment = async () => {
+    //     try {
+    //         const stripe = await stripePromise;
+    //         const res = await makePaymentRequest.post("/api/orders", {
+    //             products: cartItems,
+    //         });
+    //         await stripe.redirectToCheckout({
+    //             sessionId: res.data.stripeSession.id,
+    //         });
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
 
     return (
         <div className="cart-panel">
@@ -47,7 +48,7 @@ const Cart = () => {
                     </span>
                 </div>
 
-                {!cartItems.length && (
+                {!cartItems?.length && (
                     <div className="empty-cart">
                         <BsCartX />
                         <span>No products in the cart.</span>
@@ -57,7 +58,7 @@ const Cart = () => {
                     </div>
                 )}
 
-                {!!cartItems.length && (
+                {!!cartItems?.length && (
                     <>
                         <CartItem />
                         <div className="cart-footer">
@@ -67,12 +68,12 @@ const Cart = () => {
                                     &#8377;{cartSubTotal}
                                 </span>
                             </div>
-                            <div className="button">
+                            <div className="button" >
                                 <button
                                     className="checkout-cta"
-                                    onClick={handlePayment}
+                                    // onClick={handlePayment}
                                 >
-                                    Checkout
+                                    <a href="https://api.whatsapp.com/send?phone=9354045564" target='_blank' style={{textDecoration:"none" , color:"#000"}}>Contact Us on WhatsApp</a>
                                 </button>
                             </div>
                         </div>

@@ -8,8 +8,10 @@ const useFetch = (endpoint) => {
     }, [endpoint]);
 
     const makeApiCall = async () => {
-        const res = await fetchDataFromApi(endpoint);
-        setData(res);
+        // const res = await fetchDataFromApi(endpoint);
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}`+ endpoint);
+        const data = await res.json();
+        setData(data.data);
     };
 
     return { data };

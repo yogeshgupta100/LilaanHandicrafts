@@ -2,7 +2,8 @@
 .hero-banner {
     padding: 40px 0;
     position: relative;
-    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    background-color: #eb973d;
     @include md {
         height: calc(100vh - 80px);
     }
@@ -31,7 +32,6 @@
                 margin-bottom: 0;
             }
             @include xxl {
-                width: 600px;
                 margin-right: 0;
                 margin-top: 0;
             }
@@ -81,7 +81,7 @@
                     text-transform: uppercase;
                     font-size: 13px;
                     font-weight: 500;
-                    width: fit-content;
+                    width: auto;
                     border: 2px solid white;
                     padding: 10px 20px;
                     transition: all ease 0.3s;

@@ -15,7 +15,7 @@ const Search = ({ setSearchModal }) => {
     let { data } = useFetch(
         `/api/products?populate=*&filters[title][$contains]=${query}`
     );
-
+    console.log(data);
     if (!query.length) {
         data = null;
     }
@@ -36,13 +36,13 @@ const Search = ({ setSearchModal }) => {
                 />
             </div>
             <div className="search-result-content">
-                {!data?.data?.length && (
+                {!data && (
                     <div className="start-msg">
                         Start typing to see products you are looking for.
                     </div>
                 )}
                 <div className="search-results">
-                    {data?.data?.map((item) => (
+                    {data?.map((item) => (
                         <div
                             className="search-result-item"
                             key={item.id}
@@ -54,19 +54,17 @@ const Search = ({ setSearchModal }) => {
                             <div className="image-container">
                                 <img
                                     src={
-                                        process.env
-                                            .REACT_APP_STRIPE_APP_DEV_URL +
-                                        item.attributes.image.data[0].attributes
-                                            .url
+                                        `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
+                                        item?.attributes?.img?.data[0]?.attributes?.url
                                     }
                                 />
                             </div>
                             <div className="prod-details">
                                 <span className="name">
-                                    {item.attributes.title}
+                                    {item?.attributes?.title}
                                 </span>
                                 <span className="desc">
-                                    {item.attributes.description}
+                                    {item?.attributes?.description}
                                 </span>
                             </div>
                         </div>
