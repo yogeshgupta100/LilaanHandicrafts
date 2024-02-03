@@ -11,6 +11,7 @@ import Contact from "./Contact";
 
 const Header = () => {
     const { cartCount, showCart, setShowCart } = useContext(Context);
+    console.log(cartCount);
     const [scrolled, setScrolled] = useState(false);
     const [searchModal, setSearchModal] = useState(false);
     const navigate = useNavigate();

@@ -1,100 +1,231 @@
 @import "../../../css-config/mixins.scss";
-.hero-banner {
-    padding: 40px 0;
+// .hero-banner {
+//     padding: 40px 0;
+//     position: relative;
+//     // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+//     background-color: #DFC7A7;
+//     @include md {
+//         height: calc(100vh - 80px);
+//     }
+//     .content {
+//         height: 100%;
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//         flex-direction: column-reverse;
+//         max-width: calc(100% - 20px);
+//         margin: 0 auto;
+//         position: relative;
+//         @include md {
+//             flex-direction: row;
+//             max-width: 1200px;
+//         }
+//         .banner-img {
+//             position: relative;
+//             z-index: 9;
+//             width: 200px;
+//             margin-bottom: 20px;
+//             @include md {
+//                 width: 500px;
+//                 margin-right: 60px;
+//                 margin-top: 50px;
+//                 margin-bottom: 0;
+//             }
+//             @include xxl {
+//                 margin-right: 0;
+//                 margin-top: 0;
+//             }
+//         }
+//         .text-content {
+//             color: white;
+//             text-align: center;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             @include md {
+//                 position: absolute;
+//                 left: 50px;
+//                 top: 50%;
+//                 transform: translateY(-50%);
+//             }
+//             @include xxl {
+//                 left: 0;
+//             }
+//             h1 {
+//                 font-size: 80px;
+//                 font-weight: 700;
+//                 line-height: 1;
+//                 color: white;
+//                 margin-bottom: 20px;
+//                 @include md {
+//                     font-size: 180px;
+//                 }
+//             }
+//             p {
+//                 max-width: 300px;
+//                 font-size: 14px;
+//                 line-height: 20px;
+//                 margin-bottom: 20px;
+//                 @include md {
+//                     max-width: 500px;
+//                     font-size: 18px;
+//                     line-height: 24px;
+//                     margin-bottom: 40px;
+//                 }
+//             }
+//             .ctas {
+//                 display: flex;
+//                 justify-content: center;
+//                 gap: 20px;
+//                 .banner-cta {
+//                     text-transform: uppercase;
+//                     font-size: 13px;
+//                     font-weight: 500;
+//                     width: auto;
+//                     border: 2px solid white;
+//                     padding: 10px 20px;
+//                     transition: all ease 0.3s;
+//                     cursor: pointer;
+//                     &.v2 {
+//                         background-color: white;
+//                         color: black;
+//                     }
+//                     &:hover {
+//                         opacity: 0.6;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+.hero {
+    width: 100%;
+    height: 100vh;
     position: relative;
-    // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
-    background-color: #eb973d;
-    @include md {
-        height: calc(100vh - 80px);
+}
+
+.hero-wrapper {
+    width: 45%;
+    position: absolute;
+    left: 10%;
+}
+
+.mainSwiper{
+    width: 100%;
+    height: 100%;
+}
+
+.hero-wrapper h3 {
+    font-size: clamp(2.5rem , 2vw , 3rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: white;
+    // padding-top: 10vw;
+    padding-bottom: 3.88vw;
+}
+
+.hero-wrapper h5 {
+    font-size: clamp(1.3rem , 1.8vw , 2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: white;
+    padding-bottom: 6.31vw;
+    width: 50%;
+}
+
+.hero-wrapper button {
+    font-size: 1.5vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: white;
+
+    background-color: transparent;
+    border: 0.5px solid white;
+    padding: 0.5vw;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.hero-wrapper button:hover {
+    background-color: white;
+    color: black;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    font-size: 18px;
+    // background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-pagination{
+    top: 10vw;
+    margin-top: 19vw;
+}
+
+.swiper-pagination-bullet{
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: #756557;
+}
+
+.swiper-pagination-bullet-active{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 55vh;
     }
-    .content {
-        height: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-direction: column-reverse;
-        max-width: calc(100% - 20px);
-        margin: 0 auto;
-        position: relative;
-        @include md {
-            flex-direction: row;
-            max-width: 1200px;
-        }
-        .banner-img {
-            position: relative;
-            z-index: 9;
-            width: 200px;
-            margin-bottom: 20px;
-            @include md {
-                width: 500px;
-                margin-right: 60px;
-                margin-top: 50px;
-                margin-bottom: 0;
-            }
-            @include xxl {
-                margin-right: 0;
-                margin-top: 0;
-            }
-        }
-        .text-content {
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            @include md {
-                position: absolute;
-                left: 50px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            @include xxl {
-                left: 0;
-            }
-            h1 {
-                font-size: 80px;
-                font-weight: 700;
-                line-height: 1;
-                color: white;
-                margin-bottom: 20px;
-                @include md {
-                    font-size: 180px;
-                }
-            }
-            p {
-                max-width: 300px;
-                font-size: 14px;
-                line-height: 20px;
-                margin-bottom: 20px;
-                @include md {
-                    max-width: 500px;
-                    font-size: 18px;
-                    line-height: 24px;
-                    margin-bottom: 40px;
-                }
-            }
-            .ctas {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                .banner-cta {
-                    text-transform: uppercase;
-                    font-size: 13px;
-                    font-weight: 500;
-                    width: auto;
-                    border: 2px solid white;
-                    padding: 10px 20px;
-                    transition: all ease 0.3s;
-                    cursor: pointer;
-                    &.v2 {
-                        background-color: white;
-                        color: black;
-                    }
-                    &:hover {
-                        opacity: 0.6;
-                    }
-                }
-            }
-        }
+    .hero-wrapper {
+        width: 80%;
+    }
+    .hero-wrapper h3 {
+        font-size: clamp(1.5rem , 4vw , 2rem);
+    }
+    .hero-wrapper h5 {
+        font-size: clamp(1rem , 4vw , 1.3rem);
+        width: 80%;
+    }
+    .hero-wrapper button {
+        font-size: 1rem;
+        padding: 1vw;
     }
 }
+
+@media screen and (max-width: 415px) {
+    .hero-wrapper h3 {
+        font-size: 8vw;
+    }
+    .hero-wrapper h5 {
+        font-size: 5vw;
+    }
+    .hero-wrapper button {
+        font-size: 3vw;
+        padding: 2vw;
+    }
+}
+

@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import "./Category.scss";
 
-const Category = ({ categories }) => {
+const Category = ({ categories , heading}) => {
     const navigate = useNavigate();
     return (
         <div className="shop-by-category">
-            <div className="categories">
+            <div className="sec-heading">{heading}</div>
+            <div className="categories"> 
                 {categories?.map((item) => (
                     <div
                         key={item.id}
@@ -14,10 +15,11 @@ const Category = ({ categories }) => {
                     >
                         <img
                             src={
-                               `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
+                                `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
                                 item?.attributes?.img?.data?.attributes?.url
                             }
                         />
+                            <div className="title"><p>{item?.attributes?.title}</p></div>
                     </div>
                 ))}
             </div>

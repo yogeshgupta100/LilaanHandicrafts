@@ -11,7 +11,7 @@ const Newsletter = () => {
     
     const handleSubmit = async(e) => {
       e.preventDefault();
-      const email = inputRef.current.value;
+      const email = inputRef?.current?.value;
     
       try {
         console.log("Sending request...");
@@ -62,9 +62,9 @@ const Newsletter = () => {
                     <div className="icon">
                         <FaTwitter size={14} />
                     </div>
-                    <div className="icon">
+                    <a href="https://www.instagram.com/lilaanhandicrafts_" className="icon" target="_blank">
                         <FaInstagram size={14} />
-                    </div>
+                    </a>
                 </span>
             </div>
         </div>

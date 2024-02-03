@@ -30,7 +30,7 @@ const Home = () => {
             <Banner />
             <div className="main-content">
                 <div className="layout">
-                    <Category categories={categories} />
+                    <Category categories={categories} heading={"Shop by Categories"} />
                     <Products
                         headingText="Popular Products"
                         products={products}

@@ -1,8 +1,9 @@
 @import "../../css-config/mixins.scss";
 .single-product-main-content {
-    margin: 20px 0;
+    padding: 20px 0;
+    background-color: #fff;
     @include md {
-        margin: 75px 0;
+        padding: 75px 0;
     }
     .layout {
         max-width: calc(100% - 20px);
@@ -28,6 +29,8 @@
                 img {
                     width: 100%;
                     display: block;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
                 }
             }
             .right {
@@ -140,6 +143,9 @@
                         svg {
                             margin: 0 5px;
                         }
+                    }
+                    .social-icons a{
+                        color: #6b6b6b;
                     }
                 }
             }

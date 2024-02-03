@@ -34,11 +34,11 @@ const Footer = () => {
                     <div className="c-item">
                         <FaLocationArrow />
                         <div className="text">
-                            RZB-36 Uttam Nagar , New Delhi - 110032                      </div>
+                            A-75 Rajapuri , Uttam Nagar , New Delhi - 110059                     </div>
                     </div>
                     <div className="c-item">
                         <FaMobileAlt />
-                        <div className="text">Phone: +91 9911801358</div>
+                        <div className="text">Phone: +91 9311257358</div>
                     </div>
                     <div className="c-item">
                         <FaEnvelope />

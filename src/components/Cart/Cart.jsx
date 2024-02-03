@@ -12,23 +12,15 @@ import "./Cart.scss";
 const Cart = () => {
     const { cartItems, setShowCart, cartSubTotal } = useContext(Context);
 
-    // const stripePromise = loadStripe(
-    //     import.meta.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
-    // );
+    function sendWhatsAppMessage() {
+        var phoneNumber = '9354045564';
+        var message = encodeURIComponent('Hey there , I have some products in my cart and my total is ₹ '+ cartSubTotal);
 
-    // const handlePayment = async () => {
-    //     try {
-    //         const stripe = await stripePromise;
-    //         const res = await makePaymentRequest.post("/api/orders", {
-    //             products: cartItems,
-    //         });
-    //         await stripe.redirectToCheckout({
-    //             sessionId: res.data.stripeSession.id,
-    //         });
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // };
+    var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + message;
+        // var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber+'&text=Hey there , I have some products in my cart and my total is ' + cartSubTotal;
+
+        window.open(whatsappLink);
+    }
 
     return (
         <div className="cart-panel">
@@ -71,7 +63,7 @@ const Cart = () => {
                             <div className="button" >
                                 <button
                                     className="checkout-cta"
-                                    // onClick={handlePayment}
+                                    onClick={sendWhatsAppMessage}
                                 >
                                     <a href="https://api.whatsapp.com/send?phone=9354045564" target='_blank' style={{textDecoration:"none" , color:"#000"}}>Contact Us on WhatsApp</a>
                                 </button>
