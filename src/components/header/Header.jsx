@@ -8,12 +8,13 @@ import Search from "./Search/Search";
 import { Context } from "../../utils/context";
 import Cart from "../Cart/Cart";
 import Contact from "./Contact";
+import Modal from "../LoginForm/Modal";
 
 const Header = () => {
     const { cartCount, showCart, setShowCart } = useContext(Context);
-    console.log(cartCount);
     const [scrolled, setScrolled] = useState(false);
     const [searchModal, setSearchModal] = useState(false);
+    const [showModal, setShowModal] = useState(true);
     const navigate = useNavigate();
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -23,6 +24,10 @@ const Header = () => {
             setScrolled(false);
         }
     };
+    
+      const closeDownloadSyllabusModal = () => {
+        setShowModal(false);
+      };
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -59,6 +64,9 @@ const Header = () => {
             </header>
             {searchModal && <Search setSearchModal={setSearchModal} />}
             {showCart && <Cart />}
+            {showModal && (
+        <Modal closeModal={closeDownloadSyllabusModal} />
+      )}
         </>
     );
 };
