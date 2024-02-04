@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import "./Login.scss"
 
-const Login = ({close , showModal}) => {
+const Login = ({showModal, setShowModal}) => {
   const navigate = useNavigate();
   const nameInputRef = useRef();
 	const emailInputRef = useRef();
@@ -27,7 +27,7 @@ const Login = ({close , showModal}) => {
   const ans = await response.json();
   console.log(ans);
     // navigate('/');
-    close();
+    setShowModal(false);
   }
   return (
     showModal && (
@@ -43,7 +43,7 @@ const Login = ({close , showModal}) => {
                             </p>
                         </div>
                         <svg
-                        onClick={close}
+                        onClick={handleClick}
                             xmlns="http://www.w3.org/2000/svg"
                             width="50"
                             height="50"
