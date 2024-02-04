@@ -14,7 +14,7 @@ const Header = () => {
     const { cartCount, showCart, setShowCart } = useContext(Context);
     const [scrolled, setScrolled] = useState(false);
     const [searchModal, setSearchModal] = useState(false);
-    const [showModal, setShowModal] = useState(true);
+    // const [showModal, setShowModal] = useState(true);
     const navigate = useNavigate();
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -25,9 +25,9 @@ const Header = () => {
         }
     };
     
-      const closeDownloadSyllabusModal = () => {
-        setShowModal(false);
-      };
+    //   const closeDownloadSyllabusModal = () => {
+    //     setShowModal(false);
+    //   };
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -52,6 +52,9 @@ const Header = () => {
                         <TbSearch onClick={() => setSearchModal(true)} />
                         {/* <AiOutlineHeart /> */}
                         <Contact/>
+                        {/* {showModal && (
+                    <Modal closeModal={closeDownloadSyllabusModal} />
+                  )} */}
                         <span
                             className="cart-icon"
                             onClick={() => setShowCart(true)}
@@ -64,9 +67,6 @@ const Header = () => {
             </header>
             {searchModal && <Search setSearchModal={setSearchModal} />}
             {showCart && <Cart />}
-            {showModal && (
-        <Modal closeModal={closeDownloadSyllabusModal} />
-      )}
         </>
     );
 };

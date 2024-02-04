@@ -1,48 +1,49 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import "./Login.scss"
 
-const Login = ({closeModal}) => {
+const Login = ({close , showModal}) => {
   const navigate = useNavigate();
   const nameInputRef = useRef();
 	const emailInputRef = useRef();
 	const phoneInputRef = useRef();
-	const resumeInputRef = useRef();
-	const descriptionInputRef = useRef();
+	const passwordInputRef = useRef();
  
   const handleClick = async (e) =>{
     e.preventDefault();
-    const name = nameInputRef.current.value;
+    const username = nameInputRef.current.value;
 		const email = emailInputRef.current.value;
-		const phoneNumber = phoneInputRef.current.value;
-		const description = descriptionInputRef.current.value;
-        body = JSON.stringify({data:
-      {name, email, phoneNumber , resume:resumeInputRef.current.value  , description}
+		const mobile = phoneInputRef.current.value;
+		const password = passwordInputRef.current.value;
+        let body = JSON.stringify({data:
+      {username, mobile, email , password}
   });
-    const response = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}${url}`, {
+    const response = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/logins`, {
 			method: "POST",
 			headers: { "Content-type": "application/json" },
 			body,
   });
   const ans = await response.json();
   console.log(ans);
-    navigate("/");
+    // navigate('/');
+    close();
   }
   return (
-    <div className="form-section-syllabus">
-                <div className="container">
+    showModal && (
+      <div className="form-section-syllabus" id='form-modal'>
+                <div className="container" style={{display:"flex" , flexDirection:"column", justifyContent:"space-evenly" , width:"100%", height:"100%"}}>
                     <div className="top" style={{ display: "flex", width: "100%"}}>
                         <div className="form-head">
                             <h3>
-                            Start your journey now  
+                            Contact us  
                             </h3>
                             <p>
                             Enter your details to move forward{" "}
                             </p>
                         </div>
                         <svg
-                        onClick={closeModal}
+                        onClick={close}
                             xmlns="http://www.w3.org/2000/svg"
                             width="50"
                             height="50"
@@ -51,30 +52,26 @@ const Login = ({closeModal}) => {
                             style={{ cursor: "pointer" }}
                         >
                             <g mask="url(#mask0_600_1947)"></g>
-                            <path d="M11.6484 11.6479L24.5907 24.5902" stroke="#9844C5" />
-                            <path d="M24.5898 11.6479L11.6476 24.5902" stroke="#9844C5" />
+                            <path d="M11.6484 11.6479L24.5907 24.5902" stroke="#806441" />
+                            <path d="M24.5898 11.6479L11.6476 24.5902" stroke="#806441" />
                         </svg>
                     </div>
                     <form onSubmit={handleClick} className="form">
                     <div className="input">
             <label htmlFor="name">Your name*</label>
-            <input type="name" id="Your name*" ref={nameInputRef}/>
+            <input type="text" id="name" ref={nameInputRef}/>
         </div>
         <div className="input">
-            <label htmlFor="name">Your email*</label>
-            <input type="email" id="Your email*" ref={emailInputRef}/>
+            <label htmlFor="email">Your email*</label>
+            <input type="email" id="email" ref={emailInputRef}/>
         </div>
         <div className="input">
-            <label htmlFor="name">Enter your number*</label>
-            <input type="number" id="Your name*" ref={phoneInputRef}/>
+            <label htmlFor="mobile">Enter your number*</label>
+            <input type="tel" id="mobile" pattern="[+][1-9]{2} [0-9]{10}" ref={phoneInputRef}/>
         </div>
         <div className="input">
-            <label htmlFor="name">{"Provide a document link to your requirements*"}</label>
-            <input type="text" id="Your name*" ref={resumeInputRef}/>
-        </div>
-        <div className="input">
-            <label htmlFor="name">Mention your Profile here!</label>
-            <textarea id="Your name*" rows={3} ref={descriptionInputRef}></textarea>
+            <label htmlFor="pass">Create a Password*</label>
+            <input type="password" id="pass" ref={passwordInputRef}/>
         </div>
 								<div
 									className="download-btn"
@@ -86,17 +83,19 @@ const Login = ({closeModal}) => {
 										style={{
 											border: "none",
 											width: "100%",
-											fontSize: "clamp(0.5rem , 1vw , 1rem)",
+											fontSize: "clamp(0.8rem , 1vw , 1rem)",
 											fontWeight: "700",
+                      color:"#fff"
 										}}
 									>
-										Submit
+										Make a Call
 									</button>
 								</div>
                         </form>
                 </div>
             </div>
-  )
+    )
+  );
 }
 
 export default Login

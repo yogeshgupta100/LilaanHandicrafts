@@ -1,12 +1,19 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { IoIosCall } from "react-icons/io";
+import Modal from '../LoginForm/Modal';
 
 const Contact = () => {
-
+	const [showModal, setShowModal] = useState(false);
+	const openDownloadSyllabusModal = () => {
+        setShowModal(true);
+      };
+	  const closeDownloadSyllabusModal = () => {
+        setShowModal(false);
+      };
   return (
     <>
     <div className='signup-main'>
-      <div className='signup-vector' style={{
+      <div className='signup-vector' onClick={openDownloadSyllabusModal} style={{
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
@@ -16,7 +23,11 @@ const Contact = () => {
 								width: "30px",
 								cursor: "pointer",
 							}}>
-                <a href="tel:+91-9873287387"><IoIosCall color='#000'/></a>
+                {/* <a href="tel:+91-9873287387"><IoIosCall color='#000'/></a> */}
+				<IoIosCall color='#000'/>
+				{showModal && (
+                    <Modal close={closeDownloadSyllabusModal} show={showModal} setShowModal={setShowModal}/>
+                  )}
 							</div>
     </div>
     </>
