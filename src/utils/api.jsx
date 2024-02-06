@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const response = await fetch( {headers: {
-    accept: "application/json " + `${import.meta.env.VITE_STRAPI_APP_KEY}`,
-},});
+// const response = await fetch( {headers: {
+//     accept: "application/json " + `${import.meta.env.VITE_STRAPI_APP_KEY}`,
+// },});
 
 export const fetchDataFromApi = async(url) => {
     try {

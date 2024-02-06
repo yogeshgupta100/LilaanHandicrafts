@@ -10,7 +10,7 @@ const Login = ({showModal, setShowModal}) => {
 	const phoneInputRef = useRef();
 	const passwordInputRef = useRef();
  
-  const handleClick = async (e) =>{
+  const handleClick = async(e) =>{
     e.preventDefault();
     const username = nameInputRef.current.value;
 		const email = emailInputRef.current.value;

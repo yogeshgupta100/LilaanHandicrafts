@@ -8,7 +8,6 @@ import Search from "./Search/Search";
 import { Context } from "../../utils/context";
 import Cart from "../Cart/Cart";
 import Contact from "./Contact";
-import Modal from "../LoginForm/Modal";
 
 const Header = () => {
     const { cartCount, showCart, setShowCart } = useContext(Context);
