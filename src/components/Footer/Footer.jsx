@@ -3,6 +3,7 @@ import "./Footer.scss";
 import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
 import Payment from "../../assets/payments.png";
 import { NavLink } from "react-router-dom";
+import Contact from "../Header/Contact";
 const Footer = () => {
     const [categories , setCategories] = useState();
     const componentDidMount = () =>{
@@ -59,14 +60,14 @@ const Footer = () => {
                     <NavLink to="/about" onClick={componentDidMount} style={{textDecoration:"none"}}><span className="text">About</span></NavLink>
                     <NavLink to="/tnc/privacy" onClick={componentDidMount} style={{textDecoration:"none"}}><span className="text">Privacy Policy</span></NavLink>
                     <NavLink to="/tnc/terms&conditions" onClick={componentDidMount} style={{textDecoration:"none"}}><span className="text">Terms & Conditions</span></NavLink>
-                    <NavLink to="/contact" onClick={componentDidMount} style={{textDecoration:"none"}}><span className="text">Contact Us</span></NavLink>
+                    {/* <NavLink to="/contact" onClick={componentDidMount} style={{textDecoration:"none"}}><span className="text">Contact Us</span></NavLink> */}
+                    <Contact/>
                 </div>
             </div>
             <div className="bottom-bar">
                 <div className="bottom-bar-content">
                     <span className="text">
-                        LilaanHandicraft 2022 CREATED BY JS DEV. PREMIUM E-COMMERCE
-                        SOLUTIONS.
+                        <strong>LilaanHandicraft 2024</strong> CREATED BY YOGESH GUPTA
                     </span>
                     <img src={Payment} />
                 </div>

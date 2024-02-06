@@ -53,15 +53,15 @@ const Newsletter = () => {
                     Will be used in accordance with our Privacy Policy
                 </span>
                 <span className="social-icons">
-                    <div className="icon">
+                    <a href="https://www.linkedin.com/lilaanhandicrafts_" className="icon" target="_blank">
                         <FaLinkedinIn size={14} />
-                    </div>
-                    <div className="icon">
+                    </a>
+                    <a href="https://www.facebook.com/lilaanhandicrafts_" className="icon" target="_blank">
                         <FaFacebookF size={14} />
-                    </div>
-                    <div className="icon">
+                    </a>
+                    <a href="https://www.twitter.com/lilaanhandicrafts_" className="icon" target="_blank">
                         <FaTwitter size={14} />
-                    </div>
+                    </a>
                     <a href="https://www.instagram.com/lilaanhandicrafts_" className="icon" target="_blank">
                         <FaInstagram size={14} />
                     </a>
