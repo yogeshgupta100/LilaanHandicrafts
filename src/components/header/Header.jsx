@@ -34,7 +34,7 @@ const Header = () => {
 
     return (
         <>
-            <header
+            <div
                 className={`main-header ${scrolled ? "sticky-header" : ""}`}
             >
                 <div className="header-content">
@@ -62,7 +62,7 @@ const Header = () => {
                         </span>
                     </div>
                 </div>
-            </header>
+            </div>
             {searchModal && <Search setSearchModal={setSearchModal} />}
             {showCart && <Cart />}
         </>
