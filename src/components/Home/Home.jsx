@@ -15,12 +15,12 @@ const Home = () => {
 
 
     const getProducts = (async() => {
-        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}api/products?populate=*`);
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/products?populate=*`);
 			const data = await res.json();
 			setProducts(data.data);
         });
     const getCategories = (async() => {
-        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}api/categories?populate=*`);
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/categories?populate=*`);
 			const data = await res.json();
 			setCategories(data.data);
         });

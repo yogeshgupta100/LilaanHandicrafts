@@ -45,7 +45,7 @@ const Banner = () => {
         getBanner();
     },[])
     const getBanner = async() => {
-        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}api/banners?populate=*`);
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/banners?populate=*`);
         const data = await res.json();
         console.log(data.data);
         setBanner(data.data);
