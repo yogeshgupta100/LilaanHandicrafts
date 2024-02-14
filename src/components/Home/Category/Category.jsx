@@ -14,10 +14,7 @@ const Category = ({ categories , heading}) => {
                         onClick={() => navigate(`/category/${item.id}`)}
                     >
                         <img
-                            src={
-                                `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
-                                item?.attributes?.img?.data?.attributes?.url
-                            }
+                            src={item?.attributes?.img?.data?.attributes?.url}
                         />
                             <div className="title"><p>{item?.attributes?.title}</p></div>
                     </div>

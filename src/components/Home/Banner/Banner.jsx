@@ -66,8 +66,7 @@ const Banner = () => {
                     return (
                     <>
                     <SwiperSlide className="mainSwiper" id={item.id}>
-                        <img src={`${import.meta.env.VITE_STRAPI_SERVER_URL}` +
-                                item?.attributes?.img?.data?.attributes?.url} alt="bgImg" />
+                        <img src={item?.attributes?.img?.data?.attributes?.url} alt="bgImg" />
                         <div className="hero-wrapper">
                             <h3>
                                 {item?.attributes?.title}

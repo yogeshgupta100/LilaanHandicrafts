@@ -17,9 +17,7 @@ const CartItem = () => {
                 >
                     <div className="image-container">
                         <img
-                            src={
-                                `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
-                                item?.attributes?.img?.data[0]?.attributes?.url
+                            src={item?.attributes?.img?.data?.attributes?.url
                             }
                         />
                     </div>

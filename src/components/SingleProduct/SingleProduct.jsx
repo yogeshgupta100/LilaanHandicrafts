@@ -38,10 +38,7 @@ const SingleProduct = () => {
                 <div className="single-product-page">
                     <div className="left">
                         <img
-                            src={
-                                `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
-                                product?.img?.data[0]?.attributes?.url
-                            }
+                            src={product?.img?.data?.attributes?.url}
                         />
                     </div>
                     <div className="right">

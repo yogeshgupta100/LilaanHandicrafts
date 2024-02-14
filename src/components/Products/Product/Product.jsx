@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Product.scss";
 
 const Product = ({ data, id }) => {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     return (
         <div
             className="product-card"
@@ -11,10 +11,7 @@ const Product = ({ data, id }) => {
         >
             <div className="thumbnail">
                 <img
-                    src={
-                        `${import.meta.env.VITE_STRAPI_SERVER_URL}` +
-                        data?.img?.data[0]?.attributes?.url
-                    }
+                    src={data?.img?.data?.attributes?.url}
                 />
             </div>
             <div className="prod-details">
