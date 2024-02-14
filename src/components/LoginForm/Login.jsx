@@ -19,7 +19,7 @@ const Login = ({showModal, setShowModal}) => {
         let body = JSON.stringify({data:
       {username, mobile, email , password}
   });
-    const response = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/logins`, {
+    const response = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}api/logins`, {
 			method: "POST",
 			headers: { "Content-type": "application/json" },
 			body,

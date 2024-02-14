@@ -16,7 +16,7 @@ const Newsletter = () => {
       try {
         console.log("Sending request...");
         
-        const response = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/newsletters`, {
+        const response = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}api/newsletters`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
     const { handleAddToCart } = useContext(Context);
-    const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+    const { data } = useFetch(`api/products?populate=*&[filters][id]=${id}`);
 
     const decrement = () => {
         setQuantity((prevState) => {

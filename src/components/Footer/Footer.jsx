@@ -13,7 +13,7 @@ const Footer = () => {
         getCategories();
     },[]);
     const getCategories = (async() => {
-        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}/api/categories?populate=*`);
+        const res = await fetch(`${import.meta.env.VITE_STRAPI_SERVER_URL}api/categories?populate=*`);
             const data = await res.json();
             setCategories(data.data);  
             console.log(data.data); 
