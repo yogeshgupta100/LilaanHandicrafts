@@ -3,7 +3,7 @@ import "./Footer.scss";
 import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
 import Payment from "../../assets/payments.png";
 import { NavLink } from "react-router-dom";
-import Contact from "../header/Contact";
+import Contact from "../Header/Contact";
 const Footer = () => {
     const [categories , setCategories] = useState();
     const componentDidMount = () =>{
